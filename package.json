@@ -2,7 +2,7 @@
   "name": "fis",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://SarahKronos.github.io/FIS",
+  "homepage": "https://SarahKronos.github.io/FIS",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
