@@ -69,11 +69,11 @@ function App() {
     fetchData();
   };
 
-  const requestUpdate = async (id, newLocation) => {
-    await sendPost({ action: "update", id, pin: currentPin, newLocation });
-    setEditingEvent(null);
-    setTimeout(fetchData, 1000);
-  };
+  const requestUpdate = async (id, newRoom) => {
+  await sendPost({ action: "update", id, pin: currentPin, newRoom });
+  setEditingEvent(null);
+  setTimeout(fetchData, 1000);
+};
 
   const sendPost = async (body) => {
     await fetch(API_URL, {
@@ -185,11 +185,11 @@ function App() {
       {editingEvent && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <h3>Location ändern</h3>
+            <h3>Raum ändern</h3>
             <p>{editingEvent.Title}</p>
             <input
-              id="newLocInput"
-              defaultValue={editingEvent.Location}
+              id="newRoomInput"
+              defaultValue={editingEvent.Room} //hier von location zu raum geändert
               autoFocus
             />
             <div className="modal-btns">
@@ -198,7 +198,7 @@ function App() {
                 onClick={() =>
                   requestUpdate(
                     editingEvent.ID,
-                    document.getElementById("newLocInput").value,
+                    document.getElementById("newRoomInput").value //hier auf raum von location geändert
                   )
                 }
               >
