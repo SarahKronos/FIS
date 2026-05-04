@@ -237,8 +237,28 @@ function App() {
               <strong>Dozent:</strong> {selectedEvent.Lecturer}
             </p>
             <p>
-              <strong>Ort:</strong> {selectedEvent.Location}
-            </p>
+  <strong>Raum:</strong> {selectedEvent.Room || "Kein Raum angegeben"}
+</p>
+<p>
+  <strong>Ort:</strong> {selectedEvent.Location || "Kein Ort angegeben"}
+</p>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedEvent.Location)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                marginTop: 8,
+                padding: "6px 12px",
+                background: "#4285F4",
+                color: "white",
+                borderRadius: 4,
+                textDecoration: "none",
+                fontSize: 14,
+              }}
+            >
+              🗺️ Route in Google Maps öffnen
+            </a>
             <p>
               <strong>Datum:</strong> {formatDate(selectedEvent.Day)}
             </p>
